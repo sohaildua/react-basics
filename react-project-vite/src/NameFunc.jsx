@@ -1,7 +1,7 @@
-export function NameFunc(props) {
+export function NameFunc({ name, age }) {
   return (
     <h1>
-      {props.name} {props.age}
+      {name} {age}
     </h1>
   )
 }
