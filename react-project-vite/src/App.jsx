@@ -27,9 +27,17 @@ function App() {
       return currentArray.splice(1)
     })
   }
+  function removeSpecificElement(letter) {
+    setArray((currentArray) => {
+      return currentArray.filter((el) => el !== letter)
+    })
+  }
   return (
     <div>
       <button onClick={removeFirstElement}>Remove</button>
+      <button onClick={() => removeSpecificElement("B")}>
+        Specific Element
+      </button>
       {array.join(",")}
     </div>
   )
