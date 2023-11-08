@@ -59,17 +59,24 @@ function App() {
   return (
     <div>
       <button onClick={removeFirstElement}>Remove</button>
+      <br></br>
       <button onClick={() => removeSpecificElement("B")}>
         Specific Element
       </button>
+      <br></br>
+      <br></br>
       <button onClick={() => addLetterToEnd("B")}>
         Specific Element to end
       </button>
+      <br></br>
       <button onClick={() => addLetterToStart("1")}>
         Specific Element to start
       </button>
+      <br></br>
       <button onClick={clear}>clear</button>
+      <br></br>
       <button onClick={reset}>reset</button>
+      <br></br>
 
       {array.join(",")}
     </div>
