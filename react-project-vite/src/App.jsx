@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { NameFunc } from "./NameFunc"
 import { Counter } from "./Counter"
+import { FunctionComp } from "./FunctionComp"
 
 const INTIAL_VALUE = ["A", "B", "C"]
 function App() {
@@ -58,6 +59,8 @@ function App() {
 
   return (
     <div>
+      <FunctionComp />
+
       <button onClick={removeFirstElement}>Remove</button>
       <br></br>
       <button onClick={() => removeSpecificElement("B")}>
