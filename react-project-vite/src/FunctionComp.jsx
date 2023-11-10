@@ -1,5 +1,5 @@
 import { useState } from "react"
-
+// note class one always seem different
 export function FunctionComp() {
   const [name, setName] = useState("")
   const [age, setAge] = useState(0)
