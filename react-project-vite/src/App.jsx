@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { NameFunc } from "./NameFunc"
 import { Counter } from "./Counter"
-import { FunctionComp } from "./FunctionComp"
+import { FunctionCompuation } from "./FunctionCompuation"
 
 const INTIAL_VALUE = ["A", "B", "C"]
 function App() {
