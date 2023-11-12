@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { NameFunc } from "./NameFunc"
 import { Counter } from "./Counter"
-import { FunctionComp } from "./FunctionComp"
-import { child } from "./child"
+import { FunctionCompuation } from "./FunctionComp"
+import { Child } from "./Child"
 
 const INTIAL_VALUE = ["A", "B", "C"]
 function App() {
@@ -60,7 +60,7 @@ function App() {
 
   return (
     <div>
-      <FunctionComp />
+      <FunctionCompuation />
 
       <button onClick={removeFirstElement}>Remove</button>
       <br></br>
@@ -81,8 +81,9 @@ function App() {
       <br></br>
       <button onClick={reset}>reset</button>
       <br></br>
+
+      <Child />
       {array.join(",")}
-      {child}
     </div>
   )
 }

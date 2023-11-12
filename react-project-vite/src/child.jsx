@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export function child() {
+export function Child() {
   const [name, setName] = useState("")
   const [age, setAge] = useState(0)
   const [width, setWidth] = useState(window.innerWidth)
