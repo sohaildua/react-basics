@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { NameFunc } from "./NameFunc"
 import { Counter } from "./Counter"
 import { FunctionCompuation } from "./FunctionCompuation"
+import { child } from "./child"
 
 const INTIAL_VALUE = ["A", "B", "C"]
 function App() {
@@ -80,8 +81,8 @@ function App() {
       <br></br>
       <button onClick={reset}>reset</button>
       <br></br>
-
       {array.join(",")}
+      {child}
     </div>
   )
 }
