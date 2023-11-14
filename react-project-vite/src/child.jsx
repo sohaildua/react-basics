@@ -5,6 +5,7 @@ export function Child() {
   const [age, setAge] = useState(0)
   const [width, setWidth] = useState(window.innerWidth)
 
+  //need to learn the difference between useState and useEffect
   useEffect(() => {
     document.title = name
   }, [name])
