@@ -16,7 +16,21 @@ export function Child() {
   useEffect(() => {
     console.log("one time effect")
     /// it will work with one time on first render
+    return () => {
+      // for unmount the return function is being called
+      console.log("unmount")
+    }
   }, [])
+
+  useEffect(() => {
+    console.log(`name affect ${name}`)
+    /// it will work with one time on first render
+  }, [name])
+
+  useEffect(() => {
+    console.log(`age affect ${age}`)
+    /// it will work with one time on first render
+  }, [age])
 
   return (
     <div>
