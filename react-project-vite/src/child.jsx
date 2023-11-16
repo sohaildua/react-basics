@@ -3,15 +3,20 @@ import { useEffect, useState } from "react"
 export function Child() {
   const [name, setName] = useState("")
   const [age, setAge] = useState(0)
-  const [width, setWidth] = useState(window.innerWidth)
 
   //need to learn the difference between useState and useEffect
   //useState is used to manage state within a component,
   //allowing you to store and update data. useEffect is used to perform side effects in a component,
   //such as updating the document title, fetching data, or subscribing to events.
   useEffect(() => {
-    document.title = name
-  }, [name])
+    console.log("multiple useEffect")
+    /// it will work with every time a state changes
+  })
+
+  useEffect(() => {
+    console.log("one time effect")
+    /// it will work with one time on first render
+  }, [])
 
   return (
     <div>
