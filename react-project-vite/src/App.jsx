@@ -3,6 +3,7 @@ import { NameFunc } from "./NameFunc"
 import { Counter } from "./Counter"
 import { FunctionCompuation } from "./FunctionComp"
 import { Child } from "./Child"
+import TestApi from "./TestApi"
 
 const INTIAL_VALUE = ["A", "B", "C"]
 function App() {
@@ -60,6 +61,7 @@ function App() {
 
   return (
     <div>
+      <TestApi />
       <FunctionCompuation />
 
       <button onClick={removeFirstElement}>Remove</button>
