@@ -41,11 +41,11 @@ export default function TestApi() {
         posts.map &&
         posts?.map((post) => {
           return (
-            <div className="post-card" key={post.id}>
+            <React.Fragment className="post-card" key={post.id}>
               <h2 className="post-title">{post.title}</h2>
               <p className="post-body">{post.body}</p>
               <input type="text"></input>
-            </div>
+            </React.Fragment>
           )
         })}
     </div>
