@@ -7,7 +7,7 @@ export function Child() {
   //need to learn the difference between useState and useEffect
   //useState is used to manage state within a component,
   //allowing you to store and update data. useEffect is used to perform side effects in a component,
-  //such as updating the document title, fetching data, or subscribing to events.
+  //such as updating the document title, fetching data, or subscribing to eventss.
   useEffect(() => {
     console.log("multiple useEffect")
     /// it will work with every time a state changes
