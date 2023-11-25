@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { NameFunc } from "./NameFunc"
 import { Counter } from "./Counter"
 import { FunctionCompuation } from "./FunctionComp"
@@ -7,9 +7,15 @@ import TestApi from "./TestApi"
 
 const INTIAL_VALUE = ["A", "B", "C"]
 function App() {
-  const [name, setName] = useState("Bulbasaur")
+  const [name, setName] = useState("")
+  const inputRef = useRef()
   // 1. create a new array to store 3 values
   const [array, setArray] = useState(INTIAL_VALUE)
+
+  useEffect(() => {
+    console.log("112" + inputRef.current.value)
+  }, [name])
+
   /*return (
     <div>
       <NameFunc name="hola" age={21} />
@@ -60,7 +66,7 @@ function App() {
   }
 
   return (
-    <div>
+    <React.Fragment>
       <TestApi />
       <FunctionCompuation />
 
@@ -86,7 +92,12 @@ function App() {
 
       <Child />
       {array.join(",")}
-    </div>
+      <input
+        ref={inputRef}
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </React.Fragment>
   )
 }
 
