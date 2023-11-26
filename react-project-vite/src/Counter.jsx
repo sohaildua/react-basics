@@ -1,18 +1,17 @@
 import { useState } from "react"
 
 export function Counter() {
-  const [counter, setCounter] = useState(0)
+  const [counter, onClick] = useHandleCounter(0)
 
-  function handleCounter() {
-    setCounter((currentCount) => {
-      return currentCount + 1
-    })
+  return <div onClick={onClick}>{counter}</div>
+}
+
+function useHandleCounter(initialValue) {
+  const [counter, setCounter] = useState(initialValue)
+
+  const handleClick = () => {
+    setCounter((currentCount) => currentCount + 1)
   }
 
-  return (
-    <div onClick={handleCounter}>
-      {0}
-      {counter}
-    </div>
-  )
+  return [counter, handleClick]
 }

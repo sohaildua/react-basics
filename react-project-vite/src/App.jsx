@@ -67,9 +67,10 @@ function App() {
 
   return (
     <React.Fragment>
+      <Counter></Counter>
+
       <TestApi />
       <FunctionCompuation />
-
       <button onClick={removeFirstElement}>Remove</button>
       <br></br>
       <button onClick={() => removeSpecificElement("B")}>
