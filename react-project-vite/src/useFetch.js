@@ -18,7 +18,7 @@ export function useFetch(url, options = {}) {
         },
       })
       .then((response) => {
-        setData(response.data)
+        setData(response.data.filter((user) => user.id === 1))
         console.log("Success")
       })
       .catch((error) => {
