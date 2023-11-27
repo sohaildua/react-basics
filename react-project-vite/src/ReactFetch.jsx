@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useFetch } from "./useFetch"
 
 const URLS = {
   USERS: "https://jsonplaceholder.typicode.com/users",
@@ -6,10 +7,16 @@ const URLS = {
   COMMENTS: "https://jsonplaceholder.typicode.com/comments",
 }
 
+const OPTIONS = {
+  method: "POST",
+  body: JSON.stringify({ name: "Kyle" }),
+  headers: { "Content-type": "application/json" },
+}
+
 export function ReactFetch() {
   const [url, setUrl] = useState(URLS.USERS)
 
-  //const { data, isLoading, isError } = useFetch(url)
+  const { data, isLoading, isError } = useFetch(url, OPTIONS)
   // BONUS:
   // const { data, isLoading, isError } = useFetch(url, OPTIONS)
 
