@@ -4,6 +4,7 @@ import { Counter } from "./Counter"
 import { FunctionCompuation } from "./FunctionComp"
 import { Child } from "./Child"
 import TestApi from "./TestApi"
+import { ReactFetch } from "./ReactFetch"
 
 const INTIAL_VALUE = ["A", "B", "C"]
 function App() {
@@ -67,8 +68,9 @@ function App() {
 
   return (
     <React.Fragment>
+      <ReactFetch />
       <Counter></Counter>
-
+      // using api
       <TestApi />
       <FunctionCompuation />
       <button onClick={removeFirstElement}>Remove</button>
@@ -90,7 +92,6 @@ function App() {
       <br></br>
       <button onClick={reset}>reset</button>
       <br></br>
-
       <Child />
       {array.join(",")}
       <input
