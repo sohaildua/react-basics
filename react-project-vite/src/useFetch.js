@@ -12,11 +12,7 @@ export function useFetch(url, options = {}) {
     setIsLoading(true)
 
     axios
-      .get(url, {
-        params: {
-          filter: '[["id", "=", 11]]',
-        },
-      })
+      .get(url)
       .then((response) => {
         setData(response.data.filter((user) => user.id === 1))
         console.log("Success")
