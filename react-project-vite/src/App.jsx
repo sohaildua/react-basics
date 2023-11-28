@@ -5,6 +5,7 @@ import { FunctionCompuation } from "./FunctionComp"
 import { Child } from "./Child"
 import TestApi from "./TestApi"
 import { ReactFetch } from "./ReactFetch"
+import { ArrayFunction } from "./ArrayFunction"
 
 const INTIAL_VALUE = ["A", "B", "C"]
 function App() {
@@ -68,6 +69,7 @@ function App() {
 
   return (
     <React.Fragment>
+      <ArrayFunction />
       <ReactFetch />
       <Counter></Counter>
       // using api
