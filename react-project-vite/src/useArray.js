@@ -16,5 +16,10 @@ export function useArray(intialValue) {
   function filter(value) {
     setArray((array) => array.filter(value))
   }
-  return { array, set: setArray, push, replace, filter }
+
+  function remove(index) {
+    setArray((array) => [...array.slice(0, index), ...array.slice(index + 1)])
+  }
+
+  return { array, set: setArray, push, replace, filter, remove }
 }
