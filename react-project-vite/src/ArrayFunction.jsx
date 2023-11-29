@@ -2,7 +2,8 @@ import { useArray } from "./useArray"
 
 export function ArrayFunction() {
   const INITIAL_ARRAY = [1, 2, 3]
-  const { array, set, push, replace, filter, remove } = useArray(INITIAL_ARRAY)
+  const { array, set, push, replace, filter, remove, clear, reset } =
+    useArray(INITIAL_ARRAY)
 
   return (
     <>
@@ -25,6 +26,8 @@ export function ArrayFunction() {
           Keep numbers less than 3
         </button>
         <button onClick={() => remove(1)}>Remove second element</button>
+        <button onClick={clear}>Clear</button>
+        <button onClick={reset}>Reset</button>
       </div>
     </>
   )

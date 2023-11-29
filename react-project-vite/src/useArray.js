@@ -21,5 +21,12 @@ export function useArray(intialValue) {
     setArray((array) => [...array.slice(0, index), ...array.slice(index + 1)])
   }
 
-  return { array, set: setArray, push, replace, filter, remove }
+  function clear() {
+    setArray([])
+  }
+
+  function reset() {
+    setArray(intialValue)
+  }
+  return { array, set: setArray, push, replace, filter, remove, clear, reset }
 }
