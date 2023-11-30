@@ -6,6 +6,8 @@ import { Child } from "./Child"
 import TestApi from "./TestApi"
 import { ReactFetch } from "./ReactFetch"
 import { ArrayFunction } from "./ArrayFunction"
+import { StateForm } from "./StateForm"
+import "./style.css"
 
 const INTIAL_VALUE = ["A", "B", "C"]
 function App() {
@@ -69,6 +71,7 @@ function App() {
 
   return (
     <React.Fragment>
+      <StateForm />
       <ArrayFunction />
       <ReactFetch />
       <Counter></Counter>
