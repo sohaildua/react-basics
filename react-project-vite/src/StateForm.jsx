@@ -4,9 +4,16 @@ export function StateForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  const [emailErrors, setEmailErrors] = useState([])
+  const [passwordErrors, setPasswordErrors] = useState([])
+
+  function handleSubmit(e) {
+    e.preventDefault()
+  }
+
   return (
-    <form className="form">
-      <div className="form-group error">
+    <form onSubmit={handleSubmit} className="form">
+      <div className={`form-group ${emailErrors.length > 0 ? "error" : ""}`}>
         <label className="label" htmlFor="email">
           Email
         </label>
@@ -17,7 +24,9 @@ export function StateForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <div className="msg">Must end in @webdevsimplified.com</div>
+        {emailErrors.length > 0 && (
+          <div className="msg">{emailErrors.join(", ")}</div>
+        )}
       </div>
       <div className="form-group">
         <label className="label" htmlFor="password">
