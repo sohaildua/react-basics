@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { checkEmail, checkPassword } from "./validator"
 
 export function StateForm() {
   const [email, setEmail] = useState("")
@@ -9,6 +10,14 @@ export function StateForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
+    const emailResults = checkEmail(email)
+    const passwordResults = checkPassword(password)
+    setEmailErrors(emailResults)
+    setPasswordErrors(passwordResults)
+
+    if (emailResults.length === 0 && passwordResults.length === 0) {
+      alert("Success")
+    }
   }
 
   return (
@@ -28,7 +37,7 @@ export function StateForm() {
           <div className="msg">{emailErrors.join(", ")}</div>
         )}
       </div>
-      <div className="form-group">
+      <div className={`form-group ${passwordErrors.length > 0 ? "error" : ""}`}>
         <label className="label" htmlFor="password">
           Password
         </label>
@@ -40,6 +49,9 @@ export function StateForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
+      {passwordErrors.length > 0 && (
+        <div className="msg">{passwordErrors.join(", ")}</div>
+      )}
       <button className="btn" type="submit">
         Submit
       </button>
