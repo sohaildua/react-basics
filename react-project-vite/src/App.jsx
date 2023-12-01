@@ -8,6 +8,7 @@ import { ReactFetch } from "./ReactFetch"
 import { ArrayFunction } from "./ArrayFunction"
 import { StateForm } from "./StateForm"
 import "./style.css"
+import { RefForm } from "./RefForm"
 
 const INTIAL_VALUE = ["A", "B", "C"]
 function App() {
@@ -71,7 +72,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <StateForm />
+      <RefForm />
       <ArrayFunction />
       <ReactFetch />
       <Counter></Counter>

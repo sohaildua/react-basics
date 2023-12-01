@@ -5,15 +5,16 @@ export function StateForm() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const [emailErrors, setEmailErrors] = useState([])
-  const [passwordErrors, setPasswordErrors] = useState([])
+  const [isAfterFirstSubmit, setIsAfterFirstSubmit] = useState(false)
+
+  const emailErrors = isAfterFirstSubmit ? checkEmail(email) : []
+  const passwordErrors = isAfterFirstSubmit ? checkPassword(email) : []
 
   function handleSubmit(e) {
     e.preventDefault()
+    setIsAfterFirstSubmit(true)
     const emailResults = checkEmail(email)
     const passwordResults = checkPassword(password)
-    setEmailErrors(emailResults)
-    setPasswordErrors(passwordResults)
 
     if (emailResults.length === 0 && passwordResults.length === 0) {
       alert("Success")
