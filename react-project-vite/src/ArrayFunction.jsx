@@ -1,5 +1,5 @@
 import { useArray } from "./useArray"
-
+// creating array functions in react
 export function ArrayFunction() {
   const INITIAL_ARRAY = [1, 2, 3]
   const { array, set, push, replace, filter, remove, clear, reset } =
